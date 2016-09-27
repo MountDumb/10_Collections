@@ -10,5 +10,7 @@ namespace _10_Collections
     {
         string Symbol { get; }
         double GetValue();
+
+        
     }
 }

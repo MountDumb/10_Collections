@@ -1,9 +1,9 @@
-﻿using System;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Generic;
 
 namespace _10_Collections
 {
-    public class Portfolio
+    public class Portfolio 
     {
         //Fields
         private List<IAsset> portlist = new List<IAsset>();
@@ -42,7 +42,8 @@ namespace _10_Collections
 
         public IList<IAsset> GetAssets()
         {
-            return portlist;
+            IReadOnlyList<IAsset> roc = new ReadOnlyCollection<IAsset>(portlist);
+            return (IList<IAsset>)roc;
         }
 
         public IAsset GetAssetByName(string name)
@@ -74,6 +75,5 @@ namespace _10_Collections
 
         //Properties
 
-       
-    }
+        }
 }
