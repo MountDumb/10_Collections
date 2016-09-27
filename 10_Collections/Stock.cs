@@ -8,6 +8,7 @@ namespace _10_Collections
         private string symbol;
         private double pricepershare;
         private int numshares;
+        private int id;
 
         //Constructors
         public Stock(string symbol, double pricepershare, int numshares)
@@ -81,6 +82,12 @@ namespace _10_Collections
         {
             get { return this.numshares; }
             set { this.numshares = value; }
+        }
+
+        public int Id
+        {
+            get { return this.id; }
+            set { this.id = value; }
         }
     }
 }
