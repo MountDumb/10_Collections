@@ -38,55 +38,55 @@ namespace _10_Collections
             Assert.IsTrue(id2 != id1);
         }
 
-        //    [TestMethod]
-        //    public void CanSaveAndLoad()
-        //    {
-        //        IStockRepository repository = new MemoryStockRepository();
-        //        repository.SaveStock(yhoo);
-        //        long id = yhoo.Id;
-        //        Stock loaded = repository.LoadStock(id);
-        //        Assert.AreEqual(yhoo, loaded);
-        //    }
+        [TestMethod]
+        public void CanSaveAndLoad()
+        {
+            IStockRepository repository = new MemoryStockRepository();
+            repository.SaveStock(yhoo);
+            long id = yhoo.Id;
+            Stock loaded = repository.LoadStock(id);
+            Assert.AreEqual(yhoo, loaded);
+        }
 
-        //    [TestMethod]
-        //    public void CanSaveAfterChangeWithoutError()
-        //    {
-        //        IStockRepository repository = new MemoryStockRepository();
-        //        repository.SaveStock(yhoo);
-        //        yhoo.NumShares = 120;
-        //        repository.SaveStock(yhoo);
-        //        Stock loaded = repository.LoadStock(yhoo.Id);
-        //        Assert.AreEqual(120, loaded.NumShares);
-        //    }
+        [TestMethod]
+        public void CanSaveAfterChangeWithoutError()
+        {
+            IStockRepository repository = new MemoryStockRepository();
+            repository.SaveStock(yhoo);
+            yhoo.NumShares = 120;
+            repository.SaveStock(yhoo);
+            Stock loaded = repository.LoadStock(yhoo.Id);
+            Assert.AreEqual(120, loaded.NumShares);
+        }
 
-        //    [TestMethod]
-        //    public void CanFindAllStocks()
-        //    {
-        //        IStockRepository repository = new MemoryStockRepository();
-        //        ICollection stocks;
-        //        stocks = repository.FindAllStocks();
-        //        Assert.AreEqual(0, stocks.Count);
+        [TestMethod]
+        public void CanFindAllStocks()
+        {
+            IStockRepository repository = new MemoryStockRepository();
+            ICollection stocks;
+            stocks = repository.FindAllStocks();
+            Assert.AreEqual(0, stocks.Count);
 
-        //        repository.SaveStock(yhoo);
-        //        stocks = repository.FindAllStocks();
-        //        Assert.AreEqual(1, stocks.Count);
+            repository.SaveStock(yhoo);
+            stocks = repository.FindAllStocks();
+            Assert.AreEqual(1, stocks.Count);
 
-        //        repository.SaveStock(hp);
-        //        stocks = repository.FindAllStocks();
-        //        Assert.AreEqual(2, stocks.Count);
-        //    }
+            repository.SaveStock(hp);
+            stocks = repository.FindAllStocks();
+            Assert.AreEqual(2, stocks.Count);
+        }
 
-        //    [TestMethod]
-        //    public void CanClearRepository()
-        //    {
-        //        IStockRepository repository = new MemoryStockRepository();
-        //        repository.SaveStock(yhoo);
-        //        repository.SaveStock(hp);
-        //        repository.Clear();
-        //        ICollection stocks;
-        //        stocks = repository.FindAllStocks();
-        //        Assert.AreEqual(0, stocks.Count);
-        //    }
+        [TestMethod]
+        public void CanClearRepository()
+        {
+            IStockRepository repository = new MemoryStockRepository();
+            repository.SaveStock(yhoo);
+            repository.SaveStock(hp);
+            repository.Clear();
+            ICollection stocks;
+            stocks = repository.FindAllStocks();
+            Assert.AreEqual(0, stocks.Count);
+        }
 
 
     }

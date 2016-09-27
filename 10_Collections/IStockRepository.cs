@@ -8,6 +8,10 @@ namespace _10_Collections
 {
     interface IStockRepository
     {
+        List<IAsset> FindAllStocks();
+        void SaveStock(IAsset iass);
+        Stock LoadStock(long id);
         long NextId();
+        void Clear();
     }
 }

@@ -9,7 +9,9 @@ namespace _10_Collections
     public interface IAsset
     {
         string Symbol { get; }
+        int Id { get; }
         double GetValue();
+        
 
         
     }
